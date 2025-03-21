@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react';
+
 import Counter from './components/counter';
 import Total from './components/Total';
 import './App.css'
+import Posts from './components/Posts';
+
 
 function App() {
-
 
 
   return (
@@ -44,6 +45,14 @@ function App() {
           <Total />
         </div>
       </div>
+
+      <div className='mx-10'>
+        <h1 className='text-3xl'>Posts</h1>
+        <div>
+          <Posts/>
+        </div>
+      </div>
+
     </div>
   );
 }

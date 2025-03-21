@@ -1,9 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
-import { decrement, increment } from "../redux/counters/countersSlice";
+import { decrement, increment } from "../redux/slices/countersSlice";
 
 function Counter({ id, label }) {
 
     const dispatch = useDispatch();
+
     const count = useSelector((state) =>
       state.counters.find((counter) => counter.id === id)?.value
     );
