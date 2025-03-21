@@ -1,27 +1,16 @@
 import { useEffect, useState } from 'react';
 import Counter from './components/counter';
 import Total from './components/Total';
-// import Counter from './components/Counter';
-// import Total from './components/Total';
 import './App.css'
 
 function App() {
-  const [count1, setCount1] = useState(0);
-  const [count2, setCount2] = useState(0);
-  const [darkMode, setDarkMode] = useState(false);
 
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, [darkMode]);
+
 
   return (
     <div className="min-h-screen min-w-screen transition-colors duration-300 dark:bg-gray-900">
       <div className="container mx-auto px-4 py-8">
-        <button
+        {/* <button
           onClick={() => setDarkMode(!darkMode)}
           className="fixed top-4 right-4 p-2 rounded-lg bg-gray-200 dark:bg-gray-700"
         >
@@ -34,27 +23,25 @@ function App() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
             </svg>
           )}
-        </button>
+        </button> */}
 
         <div className="flex flex-col items-center justify-center space-y-8 mt-20">
           <h1 className="text-4xl font-bold text-gray-800 dark:text-white">
             Counter App
           </h1>
-          
+
           <div className="flex gap-8">
-            <Counter 
-              count={count1} 
-              setCount={setCount1}
+            <Counter
+              id={1}
               label="Counter 1"
             />
-            <Counter 
-              count={count2}
-              setCount={setCount2}
+            <Counter
+              id={2}
               label="Counter 2"
             />
           </div>
 
-          <Total count1={count1} count2={count2} />
+          <Total />
         </div>
       </div>
     </div>
